@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="notifications">
+        <app-notifications>
+           </app-notifications>
+    </div>
+    <div class="content-wrapper" [ngClass]="{'full': !isModalOpen}">
+        <div class="user-list-wrap">
+            <div class="button-panel">
+                <div class="button-group">
+                    <button type="button" (click)="createUser()" class="btn btn-primary">Create User</button>
+                </div>
+            </div>
+            <app-user-list
+                [users]="users$ | async"
+                (selectUser)="selectUserItem($event)">
+            </app-user-list>
+        </div>
+        <div class="create-edit-modal-wrap" *ngIf="isModalOpen">
+            <app-create-update-user-modal
+            [user]="selectedUser"
+            (close)="closeModal()"
+            (deleteUser)="deleteUser($event)"
+            (updateUser)="updateUser($event)"></app-create-update-user-modal>
+        </div>
+    </div>
+</div>

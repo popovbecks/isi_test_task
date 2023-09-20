@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "username": "user1",
+      "firstName": "Antony",
+      "lastName": "Hopkin",
+      "email": "antony@gmail.com",
+      "type": "Admin",
+      "password": "antony66antony"
+    },
+    {
+      "id": 4,
+      "username": "bob78",
+      "firstName": "Bob",
+      "lastName": "Snail",
+      "email": "bob78@gmail.com",
+      "type": "Driver",
+      "password": "bob1966bob"
+    },
+    {
+      "id": 5,
+      "username": "sunny88",
+      "firstName": "Jack",
+      "lastName": "Grilish",
+      "email": "jack95@test.ua",
+      "type": "Driver",
+      "password": "jack89jack"
+    },
+    {
+      "id": 6,
+      "username": "holland95",
+      "firstName": "Tim",
+      "lastName": "Holland",
+      "email": "holland67@test.ua",
+      "type": "Admin",
+      "password": "tom777tom"
+    },
+    {
+      "id": 7,
+      "username": "hdhj",
+      "firstName": "fekfjei",
+      "lastName": "efef",
+      "email": "kfje@mail.com",
+      "type": "Driver",
+      "password": "aaaa5555"
+    },
+    {
+      "id": 8,
+      "username": "ppp",
+      "firstName": "Oleksii",
+      "lastName": "Popov",
+      "email": "popovbecks89@gmail.com",
+      "type": "Driver",
+      "password": "gggg5555"
+    }
+  ]
+}

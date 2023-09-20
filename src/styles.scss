@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    box-shadow: 0px 5px 8px #2E8FF029;
+    border-radius: 6px;
+    color: #ffff;
+    font-size: 14px;
+    width: 120px;
+    height: 46px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    &.btn-primary {
+     background: #2E8FF0 0% 0% no-repeat padding-box;
+    }
+    &.btn-warning {
+     background: #F44682 0% 0% no-repeat padding-box;
+    }
+}
+

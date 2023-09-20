@@ -1,0 +1,23 @@
+  .notification-container {
+    border-radius: 6px;
+    height: 56px;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .notification-container .notification-message {
+    padding-left: 26px;
+  }
+
+  .notification-container.success-type {
+    background: #66BB6A 0% 0% no-repeat padding-box;
+    float: right;
+  }
+
+  .notification-container.error-type {
+    background: #EF7DA0 0% 0% no-repeat padding-box;
+    float: left;
+  }

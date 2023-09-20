@@ -1,0 +1,44 @@
+
+.manage-user-table {
+    border-collapse: collapse;
+    background-color: #fff;
+    width: 100%;
+    th {
+        text-align: left;
+        font: normal normal bold 13px/16px Helvetica;
+        letter-spacing: 0px;
+        color: #A4A4B5;
+        text-transform: uppercase;
+        height: 56px;
+        > td {
+            &:first-child {
+                padding-left: 25px;
+            }
+        }
+        > td {
+            background: #F4F5F8 0% 0% no-repeat padding-box;
+            height: 56px;
+            cursor: pointer;
+        }
+      }
+      tr {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        &.selected-user {
+            td {
+                background: #EFF0F4 0% 0% no-repeat padding-box;
+            }
+        }
+      }
+}
+
+.manage-user-table tr td {
+    background: #F4F5F8 0% 0% no-repeat padding-box;
+    height: 56px;
+    cursor: pointer;
+}
+.manage-user-table tr td:first-child,
+.manage-user-table tr th:first-child {
+    padding-left: 25px;
+}
+

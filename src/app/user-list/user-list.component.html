@@ -1,0 +1,26 @@
+<div class="manage-user-table-container">
+    <div class="manage-user-table-wrap">
+        <table class="manage-user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; trackBy: trackByUserId"
+                    (click)="userSelect(user)"
+                    [ngClass]="{'selected-user': user.isSelected}">
+                    <td>{{user.username}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="modal-container">
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <h4 *ngIf="!user?.id else userName">Create new user</h4>
+            <div class="modal-close">
+                <span class="glyphicon glyphicon-remove" (click)="close.emit()">&#10006;</span>
+            </div>
+        </div>
+        <div class="modal-form">
+            <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username*</label>
+                    <input formControlName="username"
+                            type="text"
+                            [appUsernameUnique]="user?.username">
+                    <div>
+                        <span *ngIf="userForm.get('username')?.hasError('required') && userForm.get('username')?.touched" class="error-message">Username is required field.</span>
+                        <span *ngIf="userForm.get('username')?.hasError('usernameNotUnique') && userForm.get('username')?.touched" class="error-message">Username is not unique.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First name*</label>
+                    <input formControlName="firstName" type="text">
+                    <div>
+                        <span *ngIf="userForm.get('firstName')?.hasError('required') && userForm.get('firstName')?.touched" class="error-message">First name is required field.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name*</label>
+                    <input formControlName="lastName" type="text">
+                    <div>
+                        <span *ngIf="userForm.get('lastName')?.hasError('required') && userForm.get('lastName')?.touched" class="error-message">Last name is required field.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input formControlName="email" type="email">
+                    <div>
+                        <span *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched" class="error-message">Email is required field.</span>
+                        <span  *ngIf="userForm.get('email')?.hasError('email') && userForm.get('email')?.touched" class="error-message">Wrong email format.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type*</label>
+                    <select formControlName="type">
+                        <option *ngFor="let type of typeList" value="{{type}}">{{type}}</option>
+                    </select>
+                    <div>
+                        <span *ngIf="userForm.get('type')?.hasError('required') && userForm.get('type')?.touched"class="error-message">Type name is required field.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input formControlName="password"
+                            type="password"
+                            appPasswordStrength>
+                    <div>
+                        <span *ngIf="userForm.get('password')?.hasError('required') && userForm.get('password')?.touched" class="error-message">Password is required.</span>
+                        <span *ngIf="userForm.get('password').hasError('invalidPasswordStrength') && userForm.get('password')?.touched" class="error-message">Password must have at least 8 characters and contain both letters and numbers.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="repeatPassword">Repeat password*</label>
+                    <input
+                        appPasswordStrength
+                        [appMatchPassword]="'password'"
+                        formControlName="repeatPassword"
+                        type="password">
+                    <span *ngIf="userForm.get('repeatPassword').hasError('passwordMismatch') && userForm.get('repeatPassword')?.touched" class="error-message">Passwords do not match</span>
+                </div>
+                <div class="modal-footer">
+                    <div class="button-group space-between" *ngIf="user?.id else create">
+                        <button type="button" (click)="deleteUser.emit(user?.id)" class="btn btn-warning ">Delete</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template #userName>
+    <h4>{{user.firstName}} {{user.lastName}}</h4>
+</ng-template>
+
+<ng-template #create>
+    <div class="button-group centered">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</ng-template>

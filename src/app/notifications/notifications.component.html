@@ -1,0 +1,10 @@
+<div class="notification-container"
+    *ngIf="isVisible"
+    [ngClass]="{
+    'error-type': type === NotificationType.Error,
+    'success-type': type === NotificationType.Success
+    }">
+    <div class="notification-message" >
+        <span>{{  message  }}</span>
+    </div>
+</div>
